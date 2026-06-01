@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 const SPRINT_START = new Date("2026-06-01");
-const SPRINT_END = new Date("2026-08-29");
 const TOTAL_DAYS = 90;
 const WEEKLY_GOALS = { shortForm: 21, youtube: 1, newsletter: 1 };
 const DAILY_TARGET = { shortForm: 3 };
@@ -511,7 +510,7 @@ export default function CCTDashboard() {
   // Auto-sync Todoist on load
   useEffect(() => {
     syncTodoist();
-  }, []);
+  }, [syncTodoist]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{
